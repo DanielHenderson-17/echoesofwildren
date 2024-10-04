@@ -1,0 +1,35 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Unity generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.pidb
+*.booproj
+*.svd
+*.apk
+*.jam
+*.tmproj
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Rider
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Auto-generated files for IDEs
+*.userprefs

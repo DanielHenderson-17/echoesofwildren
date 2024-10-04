@@ -1,0 +1,4 @@
+repository "ZLG@danulsan@cloud"
+  path "/"
+    br "/main"
+    co "/main"

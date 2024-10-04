@@ -1,0 +1,86 @@
+{
+    "characters": [
+        {
+            "id": 1,
+            "name": "Kibo",
+            "element": "spirit",
+            "animalia": "wolf",
+            "weapon": "sword",
+            "starLevel": 5,
+            "baseStats": {
+                "baseHp": 80,
+                "baseAD": 50,
+                "baseAP": 20,
+                "baseSpecial": 50
+            }
+        },
+        {
+            "id": 2,
+            "name": "Jinpu",
+            "element": "wind",
+            "animalia": "none",
+            "weapon": "bow",
+            "starLevel": 4,
+            "baseStats": {
+                "baseHp": 70,
+                "baseAD": 50,
+                "baseAP": 40,
+                "baseSpecial": 30
+            }
+        },
+        {
+            "id": 3,
+            "name": "Seua Ying",
+            "element": "flame",
+            "animalia": "cat",
+            "weapon": "gauntlets",
+            "starLevel": 5,
+            "baseStats": {
+                "baseHp": 85,
+                "baseAD": 60,
+                "baseAP": 20,
+                "baseSpecial": 40
+            }
+        },
+        {
+            "id": 4,
+            "name": "Zuri",
+            "element": "spirit",
+            "animalia": "none",
+            "weapon": "tome",
+            "starLevel": 4,
+            "baseStats": {
+                "baseHp": 65,
+                "baseAD": 20,
+                "baseAP": 60,
+                "baseSpecial": 40
+            }
+        },
+        {
+            "id": 5,
+            "name": "Tempo",
+            "element": "water",
+            "animalia": "none",
+            "weapon": "polearm",
+            "starLevel": 4,
+            "baseStats": {
+                "baseHp": 90,
+                "baseAD": 40,
+                "baseAP": 40,
+                "baseSpecial": 40
+            }
+        }
+    ],
+    "team": [
+        1,
+        3,
+        2,
+        5
+    ],
+    "activeCharacterId": 1,
+    "playerPosition": {
+        "x": -4.8442769050598148,
+        "y": 0.5,
+        "z": -8.909205436706543
+    }
+}
