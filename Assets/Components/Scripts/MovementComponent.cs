@@ -32,15 +32,15 @@ public class MovementComponent : MonoBehaviour
         }
         else
         {
-            IsMoving = false;  // Ensure IsMoving is set to false when there is no valid direction or goal
+            IsMoving = false;
         }
     }
 
     private void MoveInDirection()
     {
-        Vector3 move = (baseSpeed * speedModifier) * direction.Value * Time.deltaTime;
+        Vector3 move = baseSpeed * speedModifier * Time.deltaTime * direction.Value;
         body.position += move;
-        Facing = direction.Value;  // Use direction to set the facing
+        Facing = direction.Value;
         IsMoving = true;
     }
 
@@ -54,7 +54,7 @@ public class MovementComponent : MonoBehaviour
         }
         else
         {
-            Vector3 move = Vector3.MoveTowards(body.position, goal.Value, (baseSpeed * speedModifier) * Time.deltaTime);
+            Vector3 move = Vector3.MoveTowards(body.position, goal.Value, baseSpeed * speedModifier * Time.deltaTime);
             body.position = move;
             Facing = (goal.Value - body.position).normalized;
             IsMoving = true;
@@ -71,11 +71,16 @@ public class MovementComponent : MonoBehaviour
     {
         goal = null;
         direction = newDirection.normalized;
-        IsMoving = direction != Vector3.zero;  // Set IsMoving based on direction input
+        IsMoving = direction != Vector3.zero;
     }
 
     public void SetSpeedModifier(float modifier)
     {
         speedModifier = modifier;
     }
+
+    public void SetFacingDirection(Vector3 newFacing)
+{
+    Facing = newFacing;
+}
 }

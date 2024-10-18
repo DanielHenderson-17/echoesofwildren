@@ -1,25 +1,26 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class DataManager : MonoBehaviour
 {
-    public int saveInterval = 5;
-    public UnityEvent save = new UnityEvent();
+    public int saveInterval = 5; // in seconds
+    public UnityEvent save = new UnityEvent(); // event for saving
 
-    void Start()
+    private void Start()
     {
+        Debug.Log("DataManager started. Timer for auto-save is running.");
         StartCoroutine(TimerRoutine());
     }
-    IEnumerator TimerRoutine()
+
+    private IEnumerator TimerRoutine()
     {
         WaitForSeconds delay = new WaitForSeconds(saveInterval);
         while (true)
         {
-            save.Invoke();
+            Debug.Log("Triggering save event from DataManager.");
+            save.Invoke(); // trigger the save event every 5 seconds
             yield return delay;
-             Debug.Log("Invoking");
         }
     }
 }

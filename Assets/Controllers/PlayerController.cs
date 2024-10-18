@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private MovementComponent movementComponent;
-    public float runSpeedModifier = 2f; // Additional speed when running
+    private AnimationComponent animationComponent;
+    public float runSpeedModifier = 2f;
 
     private void Awake()
     {
@@ -13,17 +14,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (movementComponent == null) return;
+
         Vector3 inputDirection = GetInputDirection();
 
         if (inputDirection != Vector3.zero)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
-                movementComponent.SetSpeedModifier(runSpeedModifier); // Apply run speed modifier
+                movementComponent.SetSpeedModifier(runSpeedModifier);
             }
             else
             {
-                movementComponent.SetSpeedModifier(1f); // Reset to normal speed
+                movementComponent.SetSpeedModifier(1f);
             }
 
             movementComponent.SetDirection(inputDirection);
@@ -41,4 +44,21 @@ public class PlayerController : MonoBehaviour
 
         return new Vector3(horizontal, 0f, vertical).normalized;
     }
+    public void SetActiveComponents(MovementComponent newMovementComponent, AnimationComponent newAnimationComponent)
+    {
+        movementComponent = newMovementComponent;
+        animationComponent = newAnimationComponent;
+    }
+
+    public MovementComponent GetMovementComponent()
+    {
+        return movementComponent;
+    }
+
+    public bool IsMoving()
+    {
+        return movementComponent.IsMoving;
+    }
 }
+
+
