@@ -210,4 +210,10 @@ public class PlayerManager : MonoBehaviour
             Debug.LogError("Character data not found.");
         }
     }
+
+    public CharacterData GetCharacterData()
+{
+    return characterData; // Assuming characterData is populated in PlayerManager
+}
+
 }
