@@ -213,7 +213,7 @@ public class PlayerManager : MonoBehaviour
 
     public CharacterData GetCharacterData()
 {
-    return characterData; // Assuming characterData is populated in PlayerManager
+    return characterData; 
 }
 
 }

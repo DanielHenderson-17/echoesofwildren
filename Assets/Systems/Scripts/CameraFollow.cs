@@ -32,6 +32,6 @@ public class CameraFollow : MonoBehaviour
 
         offset = this.transform.position - target.position;
 
-        offset = new Vector3(0, Mathf.Abs(offset.y), -5); 
+        offset = new Vector3(0, Mathf.Abs(offset.y), -4); 
     }
 }
