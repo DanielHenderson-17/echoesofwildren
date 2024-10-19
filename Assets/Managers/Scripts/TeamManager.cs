@@ -19,7 +19,7 @@ public class TeamManager : MonoBehaviour
     private void Start()
     {
         int savedCharacterId = characterData.activeCharacterId;
-        activeIndex = System.Array.IndexOf(characterData.team.ToArray(), savedCharacterId);
+        activeIndex = characterData.team.IndexOf(savedCharacterId);
 
         if (activeIndex == -1)
         {

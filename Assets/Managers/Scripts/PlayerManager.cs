@@ -133,14 +133,22 @@ public class PlayerManager : MonoBehaviour
             characterData.playerPosition.x = currentPos.x;
             characterData.playerPosition.y = currentPos.y;
             characterData.playerPosition.z = currentPos.z;
+
+            Character character = characterData.characters.Find(c => c.name == activeCharacter.name);
+            if (character != null)
+            {
+                characterData.activeCharacterId = character.id;
+            }
+            else
+            {
+                Debug.LogWarning("Character not found in characterData.");
+            }
         }
         else
         {
             Debug.LogWarning("Active character is null when trying to save the player position.");
         }
-
-        characterData.activeCharacterId = characterData.team[0];
-
+        
         SaveCharacterData();
     }
 
